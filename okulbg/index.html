@@ -1,0 +1,45 @@
+<!--Made by Toprak-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="image">
+            <img id="slideshow" src="img/img1.jpg" width="800" height="500" style="border-radius: 16px;">
+        </div>
+        <div class="contents">
+            <div class="c-left">
+                <span class="c-span">Duyurular</span>
+                <div class="div-c-left">
+                    <li>Borusan Null</li>
+                </div>
+            </div>
+            <div class="c-right">
+                <span class="c-span">Haberler</span>
+                <div class="div-c-right">
+                    <li>Borusan Null</li>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const images = ['img/img1.jpg', 'img/img2.jpg', 'img/img3.jpg']; 
+        let currentImageIndex = 0;
+
+        function changeImage() {
+            const imageElement = document.getElementById('slideshow');
+            currentImageIndex = (currentImageIndex + 1) % images.length; 
+            imageElement.src = images[currentImageIndex]; 
+        }
+
+        setInterval(changeImage, 15000); 
+    </script>
+</body>
+</html>
